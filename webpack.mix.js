@@ -6,7 +6,12 @@ var webpackConfig = {
     plugins: [
         new VuetifyLoaderPlugin(),
         new CaseSensitivePathsPlugin()
-    ]
+    ],
+    resolve: {
+        alias: {
+        'vue$': 'vue/dist/vue.runtime.common.js'
+        }
+    }
 }
 
 mix.webpackConfig(webpackConfig);
@@ -22,5 +27,8 @@ mix.webpackConfig(webpackConfig);
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix
+  .js('resources/js/entry-client.js', 'public/js')
+  .js('resources/js/entry-server.js', 'public/js')
+    //.js('resources/js/app.js', 'public/js')
+    .postCss("resources/css/app.css", "public/css", [require("tailwindcss"),]);

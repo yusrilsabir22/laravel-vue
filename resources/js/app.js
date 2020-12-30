@@ -22,6 +22,7 @@ import Vuetify from '../plugin/vuetify'
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('articles', require('./components/Articles.vue').default);
+Vue.component('navbars', require('./components/Navbar.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,7 +30,14 @@ Vue.component('articles', require('./components/Articles.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+// const app = new Vue({
+//     vuetify: Vuetify,
+//     el: '#app',
+// });
+
+export function createApp() {
+  return new Vue({
     vuetify: Vuetify,
-    el: '#app',
-});
+    render: h => h(App)
+  });
+}

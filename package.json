@@ -28,10 +28,11 @@
         "sass-loader": "^8.0.2",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat",
         "vue": "^2.5.17",
+        "vue-server-renderer": "^2.6.12",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "vuetify": "^2.3.10",
-        "vuetify-loader": "^1.4.3"
+        "vuetify-loader": "1.4.3"
     }
 }
